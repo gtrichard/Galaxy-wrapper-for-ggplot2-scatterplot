@@ -1,3 +1,4 @@
+#TO ACCOMPANY ggplot_point_8.10.2.xml version 0.1.2
 # Setup R error handling to go to stderr
 options(show.error.messages=F, error=function(){cat(geterrmessage(),file=stderr());q("no",1,F)})
 
@@ -40,6 +41,19 @@ option_specification = matrix(c(
   'colors', 'q', 2, 'character', 
   'colororder', 'r', 2, 'integer', 
   'pointcolor', 'u', 2, 'character', 
+  'axistitlecust', 'v', 2, 'character',
+  'axistitlecolor', '1', 2, 'character',
+  'axistitlesize', '2', 2, 'integer',
+  'axistitleface', '3', 2, 'character',
+  'axistextcust', '4', 2, 'character',
+  'axistextcolor', '5', 2, 'character',
+  'axistextsize', '6', 2, 'integer',
+  'axistextface', '7', 2, 'character',
+  'plottitlecust', '8', 2, 'character',
+  'plottitlecolor', '9', 2, 'character',
+  'plottitlesize', '10', 2, 'integer',
+  'plottitleface', '11', 2, 'character',
+  'gridlinecust', '12', 2, 'character',
   'output', 'o', 2, 'character'
   ), byrow=TRUE, ncol=4);
 
@@ -172,8 +186,45 @@ if(options$transform == "log2"){
 }
 
 
+#axis label custization
+if(options$axistitlecust == "Default"){
+    gg_axistitle = theme(axis.title = element_text(color = NULL, size = NULL, face = NULL))
+} else {
+    gg_axistitle = theme(axis.title = element_text(color = options$axistitlecolor, size = options$axistitlesize, face = options$axistitleface))
+}
+
+
+#axis text(tick) custization
+if(options$axistextcust == "Default"){
+    gg_axistext = theme(axis.text = element_text(color = NULL, size = NULL, face = NULL))
+} else {
+    gg_axistext = theme(axis.text = element_text(color = options$axistextcolor, size = options$axistextsize, face = options$axistextface))
+}
+
+
+#plot title custimization
+if(options$plottitlecust == "Default"){
+    gg_plottitle = theme(plot.title = element_text(color = NULL, size = NULL, face = NULL))
+} else {
+    gg_plottitle = theme(plot.title = element_text(color = options$plottitlecolor, size = options$plottitlesize, face = options$plottitleface))
+}
+
+#grid line customization
+if(options$gridlinecust == "Default"){
+    gg_gridline = NULL
+} else if(options$gridlinecust == "hidemajor"){
+    gg_gridline = theme(panel.grid.major = element_blank())
+} else if(options$gridlinecust == "hideminor"){
+    gg_gridline = theme(panel.grid.minor = element_blank())
+} else if(options$gridlinecust == "hideboth"){
+    gg_gridline = theme(panel.grid.minor = element_blank(), panel.grid.major = element_blank())
+} else {
+}
+
+
 #this is the actual ggplot command to make the final plot(s)
 ggplot(input, aes(xcol,ycol))+gg_point+gg_facet+
-gg_theme+gg_scalex+gg_scaley+color_scale+ggtitle(options$title)+xlab(options$xlab)+ylab(options$ylab)
+gg_theme+gg_scalex+gg_scaley+color_scale+ggtitle(options$title)+xlab(options$xlab)+ylab(options$ylab)+
+gg_axistitle+gg_axistext+gg_plottitle+gg_gridline
 
 ggsave(file=options$output, width=gg_width, height=gg_height)
