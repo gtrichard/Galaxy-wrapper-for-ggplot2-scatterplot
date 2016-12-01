@@ -7,7 +7,7 @@
         <exit_code range="1:" />
     </stdio>
     <command><![CDATA[
-        Rscript /Users/cmdb/Downloads/Galaxy-wrapper-for-ggplot2-scatterplot-master/ggplotscript8.10.2.R --input "$input1" --title "$title" 
+        Rscript /Users/cmdb/Downloads/Galaxy-wrapper-for-ggplot2-scatterplot-master/ggplotpointscript.R --input "$input1" --title "$title" 
         --theme "${theme.theme_selector}" --xplot "$xplot" --yplot "$yplot" --scaling "$scaling.Plot_scaling" --points "$points.pointoptions" --dim "$dimensions.plotdim" --factor "$factor.factoring" --transform "$transformation.transform" --xlab "$xlab" --ylab "$ylab" 
         --axistitlecust "$axistitlecustomization.axistitlecust" --axistextcust "$axistextcustomization.axistextcust" 
         --plottitlecust "$plottitlecustomization.plottitlecust" --gridlinecust "$gridlinecustomization.gridlinecust" --output "Rplot.pdf"
