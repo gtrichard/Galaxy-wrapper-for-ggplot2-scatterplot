@@ -1,4 +1,4 @@
-#TO ACCOMPANY ggplot_point_8.10.2.xml version 0.1.2
+#TO ACCOMPANY ggplot_point.xml version 0.1.2
 # Setup R error handling to go to stderr
 options(show.error.messages=F, error=function(){cat(geterrmessage(),file=stderr());q("no",1,F)})
 
