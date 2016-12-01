@@ -1,4 +1,4 @@
-<tool id="ggplot_point_8.10.2" name="Scatterplot w ggplot2 to pdf 8.10.2" version="0.1.2">
+<tool id="ggplot_point" name="Scatterplot with ggplott" version="0.1.2">
     <requirements>
         <requirement type="package">getopt</requirement>
         <requirement type="package">ggplot2</requirement>
@@ -377,7 +377,7 @@
 
         Please report issues at: https://github.com/MoHeydarian/Galaxy-wrapper-for-ggplot2-scatterplot
     ]]></help>
-    <!-- <citations>
+     <citations>
         <citation type="bibtex">
     @misc{renameTODO,
       author = {8.5.2016, FirstTODO},
@@ -385,5 +385,5 @@
       title = {TODO},
       url = {http://docs.ggplot2.org/current/geom_point.html},
     }</citation>
-        </citations> -->
+        </citations>
     </tool>      
