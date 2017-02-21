@@ -1,13 +1,13 @@
-<tool id="ggplot_point" name="Scatterplot w ggplot2 to pdf 8.10.2" version="0.1.2">
+<tool id="ggplot_point" name="Scatterplot w ggplot2" version="0.1.3">
     <requirements>
-        <requirement type="package">getopt</requirement>
-        <requirement type="package">ggplot2</requirement>
+        <requirement type="package">r-getopt</requirement>
+        <requirement type="package">r-ggplot2</requirement>
     </requirements>
     <stdio>
         <exit_code range="1:" />
     </stdio>
     <command><![CDATA[
-        Rscript Rscript '${__tool_directory__}/ggplotpointscript.R' --input "$input1" --title "$title" 
+        Rscript '${__tool_directory__}/ggplotpointscript.R' --input "$input1" --title "$title" 
         --theme "${theme.theme_selector}" --xplot "$xplot" --yplot "$yplot" --scaling "$scaling.Plot_scaling" --points "$points.pointoptions" --dim "$dimensions.plotdim" --factor "$factor.factoring" --transform "$transformation.transform" --xlab "$xlab" --ylab "$ylab" 
         --axistitlecust "$axistitlecustomization.axistitlecust" --axistextcust "$axistextcustomization.axistextcust" 
         --plottitlecust "$plottitlecustomization.plottitlecust" --gridlinecust "$gridlinecustomization.gridlinecust" --output "Rplot.pdf"
