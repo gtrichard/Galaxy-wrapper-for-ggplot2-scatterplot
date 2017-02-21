@@ -1,4 +1,4 @@
-<tool id="ggplot_point" name="Scatterplot w ggplot2 to pdf 8.10.2" version="0.1.2">
+<tool id="ggplot_point" name="Scatterplot w ggplot2" version="0.1.3">
     <requirements>
         <requirement type="package">r-getopt</requirement>
         <requirement type="package">r-ggplot2</requirement>
