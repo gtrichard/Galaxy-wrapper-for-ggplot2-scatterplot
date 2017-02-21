@@ -1,7 +1,7 @@
 <tool id="ggplot_point" name="Scatterplot w ggplot2 to pdf 8.10.2" version="0.1.2">
     <requirements>
-        <requirement type="package">getopt</requirement>
-        <requirement type="package">ggplot2</requirement>
+        <requirement type="package">r-getopt</requirement>
+        <requirement type="package">r-ggplot2</requirement>
     </requirements>
     <stdio>
         <exit_code range="1:" />
