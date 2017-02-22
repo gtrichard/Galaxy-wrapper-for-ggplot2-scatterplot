@@ -1,4 +1,4 @@
-<tool id="ggplot_point" name="Scatterplot w ggplot2" version="0.1.3">
+<tool id="ggplot_point" name="Scatterplot w ggplot2" version="0.1.4">
     <requirements>
         <requirement type="package">r-getopt</requirement>
         <requirement type="package">r-ggplot2</requirement>
@@ -88,8 +88,8 @@
     ]]></command>
     <inputs>
         <param name="input1" type="data" format="tabular" label="Input (tabular format)" />
-        <param name="xplot" type="integer" value="8" label="Column to plot on x-axis" />
-        <param name="yplot" type="integer" value="9" label="Column to plot on y-axis" />
+        <param name="xplot" type="data_column" data_ref="input" numerical="True" label="Column to plot on x-axis" />
+        <param name="yplot" type="data_column" data_ref="input" numerical="True" label="Column to plot on y-axis" />
         <param name="title" size="30" type="text" value="plot title" label="Title of plot" />
         <param name="xlab" size="30" type="text" value="title of x-axis" label="Label for x-axis"/>
         <param name="ylab" size="30" type="text" value="title of y-axis" label="Label for y-axis"/> 
