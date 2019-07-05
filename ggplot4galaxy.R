@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
-suppressMessages( library( library('ggplot2'))
-suppressMessages( library(library('optparse'))
+suppressMessages( library( library('ggplot2')))
+suppressMessages( library(library('optparse')))
 
 option_list = list(
 
