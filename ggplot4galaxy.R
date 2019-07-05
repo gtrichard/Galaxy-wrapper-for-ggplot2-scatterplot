@@ -39,8 +39,16 @@ if ( is.null( opt$output ) ) {
 
 input_data <- read.table(opt$input, header=T)
 
-p <- ggplot(data = input_data, aes(x = col_x, y = col_y))
+p <- ggplot(data = input_data, aes(x = opt$col_x, y = opt$col_y))
 
 if (is.null(opt$geom_boxplot)==FALSE){
   p + geom_boxplot()
 }
+
+if (is.null(opt$geom_violin)==FALSE){
+  p + geom_violin()
+}
+
+pdf(opt$output)
+p
+dev.off()
